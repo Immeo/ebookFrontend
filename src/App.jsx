@@ -2,9 +2,8 @@ import Header from "./component/Header/Header";
 
 function App() {
   return (
-    <div className="">
+    <div className="m-auto">
       <Header />
-      Hello world!
     </div>
   );
 }

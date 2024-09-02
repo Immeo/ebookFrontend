@@ -3,14 +3,18 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header className="flex flex-row justify-between">
-      <div>
+      <div className="flex w-2/12 items-center justify-start">
         <img src="/logo.svg" alt="logo site" />
       </div>
-      <div>
+      <div className="flex w-5/12 items-center justify-start">
         <nav>
-          <ul>
-            <NavLink to="/books">Books</NavLink>
-            <NavLink to="/favorite">Favorite</NavLink>
+          <ul className="flex items-center justify-center gap-20">
+            <NavLink className="cursor-pointer" to="/books">
+              Books
+            </NavLink>
+            <NavLink className="cursor-pointer" to="/favorite">
+              Favorite
+            </NavLink>
           </ul>
         </nav>
       </div>
