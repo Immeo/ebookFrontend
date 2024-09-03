@@ -9,10 +9,16 @@ function Header() {
       <div className="flex w-5/12 items-center justify-start">
         <nav>
           <ul className="flex items-center justify-center gap-20">
-            <NavLink className="cursor-pointer" to="/books">
+            <NavLink
+              className="cursor-pointer hover:[color:var(--main-color)]"
+              to="/books"
+            >
               Books
             </NavLink>
-            <NavLink className="cursor-pointer" to="/favorite">
+            <NavLink
+              className="cursor-pointer hover:[color:var(--main-color)]"
+              to="/favorites"
+            >
               Favorite
             </NavLink>
           </ul>
