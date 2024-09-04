@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import BookList from "./pages/BookList/BookList";
 import Layout from "./pages/Layout/Layout";
 
 const router = createBrowserRouter([
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/books",
-        element: <h1>Books</h1>,
+        element: <BookList />,
       },
       {
         path: "/favorites",
