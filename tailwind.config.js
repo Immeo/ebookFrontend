@@ -8,6 +8,8 @@ export default {
         "second-color": "var(--second-color)",
         "alert-color": "var(--alert-color)",
         "hover-main-color": "var(--hover-main-color)",
+        "bg-action": "var(--bg-action)",
+        "hover-bg-action": "var(--hover-bg-action)",
       },
     },
   },
