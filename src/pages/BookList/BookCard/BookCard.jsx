@@ -29,7 +29,7 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
               </p>
               <div className="sm:flex sm:justify-between">
                 <div className="flex flex-1 flex-col text-sm">
-                  <div>Жанр: {book.genre_books}</div>
+                  <div>Жанр: {book.genre_books.genres_name}</div>
                   <div>Издатель: {book.publisher_books}</div>
                   <div className="mt-5 flex items-center justify-between gap-5">
                     {book.rate && book.rate.length > 0 ? (
@@ -44,7 +44,7 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
                     )}
                     <div className="items-end">
                       <Link
-                        className="bg-bg-action hover:hover-bg-action mt-3 rounded-lg px-5 py-2 font-bold shadow-md [color:var(--main-color)] sm:mt-0 md:px-6 md:py-3 md:text-lg"
+                        className="hover:hover-bg-action mt-3 rounded-lg bg-bg-action px-5 py-2 font-bold shadow-md [color:var(--main-color)] sm:mt-0 md:px-6 md:py-3 md:text-lg"
                         to={`/book/${book.id}`}
                       >
                         О книге

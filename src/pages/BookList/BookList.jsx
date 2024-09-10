@@ -1,9 +1,9 @@
 import renderStarsIcon from "../../assets/icons/renderStarsIcon;";
-import { useGetBooksList } from "../../hooks/api/useGetBoks";
+import { useGetData } from "../../hooks/api/useGetData";
 import BookCard from "./BookCard/BookCard";
 
 function BookList() {
-  const { books, error } = useGetBooksList();
+  const { data, error } = useGetData("books");
 
   const sumRating = (rating) => {
     if (!rating || !rating.length) return 0;
@@ -17,7 +17,7 @@ function BookList() {
   return (
     <div className="container mx-auto p-10 antialiased md:p-20">
       <BookCard
-        books={books}
+        books={data}
         sumRating={sumRating}
         renderStarsIcon={renderStarsIcon}
         error={error}
