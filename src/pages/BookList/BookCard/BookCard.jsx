@@ -33,7 +33,7 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
               <div className="sm:flex sm:justify-between">
                 <div className="flex flex-1 flex-col text-sm">
                   <div>Жанр: {book.genre_books.genres_name}</div>
-                  <div>Издатель: {book.publisher_books}</div>
+                  <div>Издатель: {book.publisher_books.publishers_name}</div>
                   <div className="mt-5 flex items-center justify-between gap-5">
                     {book.rate && book.rate.length > 0 ? (
                       <div>

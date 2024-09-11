@@ -5,8 +5,6 @@ const Header = memo(function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const location = useLocation();
 
-  console.log(isOpenMenu);
-
   useEffect(() => {
     setIsOpenMenu(false);
   }, [location.pathname]);
