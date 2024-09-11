@@ -24,6 +24,9 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
               <h2 className="mt-4 text-2xl font-semibold [color:var(--text-color)]">
                 {book.title_books}
               </h2>
+              <p className="mt-2 text-sm [color:var(--text-color)]">
+                {book.author_books.authors_full_name}
+              </p>
               <p className="mt-2 leading-relaxed [color:var(--text-color)]">
                 {book.description_books}
               </p>
