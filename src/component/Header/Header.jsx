@@ -63,7 +63,7 @@ const Header = memo(function Header() {
                 <li>
                   <NavLink
                     className="translate-x-1 cursor-pointer break-words text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
-                    to="/publishings"
+                    to="/publishers"
                   >
                     По издателю
                   </NavLink>

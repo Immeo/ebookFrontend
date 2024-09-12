@@ -3,11 +3,13 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import AuthorsList from "./pages/Authors/AuthorsList";
-import BooksByAuthor from "./pages/Authors/BooksByAuthor/BooksByAuthor";
 import BookList from "./pages/Books/BookList";
+import BooksByAuthor from "./pages/Books/BooksByAuthor/BooksByAuthor";
 import BooksByGenre from "./pages/Books/BooksByGenre/BooksByGenre";
+import BooksPublishers from "./pages/Books/BooksPublishers/BooksPublishers";
 import GenreList from "./pages/Genre/GenreList";
 import Layout from "./pages/Layout/Layout";
+import PublishersList from "./pages/Publishers/PublishersList";
 
 const router = createBrowserRouter([
   {
@@ -23,16 +25,24 @@ const router = createBrowserRouter([
         element: <GenreList />,
       },
       {
+        path: "/publishers",
+        element: <PublishersList />,
+      },
+      {
         path: "/books",
         element: <BookList />,
+      },
+      {
+        path: "/authors/:slug",
+        element: <BooksByAuthor />,
       },
       {
         path: "/genres/:slug",
         element: <BooksByGenre />,
       },
       {
-        path: "/authors/:slug",
-        element: <BooksByAuthor />,
+        path: "/publishers/:slug",
+        element: <BooksPublishers />,
       },
       {
         path: "/favorites",
