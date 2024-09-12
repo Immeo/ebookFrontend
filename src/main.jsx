@@ -2,8 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import BookList from "./pages/BookList/BookList";
-import BooksByGenre from "./pages/Genre/BooksByGenre/BooksByGenre";
+import AuthorsList from "./pages/Authors/AuthorsList";
+import BooksByAuthor from "./pages/Authors/BooksByAuthor/BooksByAuthor";
+import BookList from "./pages/Books/BookList";
+import BooksByGenre from "./pages/Books/BooksByGenre/BooksByGenre";
 import GenreList from "./pages/Genre/GenreList";
 import Layout from "./pages/Layout/Layout";
 
@@ -13,16 +15,24 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/books",
-        element: <BookList />,
+        path: "/authors",
+        element: <AuthorsList />,
       },
       {
         path: "/genres",
         element: <GenreList />,
       },
       {
+        path: "/books",
+        element: <BookList />,
+      },
+      {
         path: "/genres/:slug",
         element: <BooksByGenre />,
+      },
+      {
+        path: "/authors/:slug",
+        element: <BooksByAuthor />,
       },
       {
         path: "/favorites",

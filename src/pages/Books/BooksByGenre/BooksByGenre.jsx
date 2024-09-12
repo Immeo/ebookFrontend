@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import renderStarsIcon from "../../../assets/icons/renderStarsIcon;";
 import { sumRating } from "../../../helpering/HelpingFuncion/sumRating";
 import { useGetData } from "../../../hooks/api/useGetData";
-import BookCard from "../../BookList/BookCard/BookCard";
+import BookCard from "../../Books/BookCard/BookCard";
 
 function BooksByGenre() {
   const { slug } = useParams();
