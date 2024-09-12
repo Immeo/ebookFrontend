@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import BookList from "./pages/BookList/BookList";
+import BooksByGenre from "./pages/Genre/BooksByGenre/BooksByGenre";
+import GenreList from "./pages/Genre/GenreList";
 import Layout from "./pages/Layout/Layout";
 
 const router = createBrowserRouter([
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         path: "/books",
         element: <BookList />,
+      },
+      {
+        path: "/genres",
+        element: <GenreList />,
+      },
+      {
+        path: "/genres/:slug",
+        element: <BooksByGenre />,
       },
       {
         path: "/favorites",

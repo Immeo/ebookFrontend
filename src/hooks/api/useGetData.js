@@ -5,14 +5,17 @@ import { PREFIX } from "../../helpering/Api/PREFIX";
 export const useGetData = (whatsData) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoadingData, setIsLoadingData] = useState(false);
 
   const getData = async () => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setIsLoadingData(true);
+      await new Promise((resolve) => setTimeout(resolve, 500));
       const response = await axios.get(`${PREFIX}${whatsData}/`, {
         withCredentials: false,
       });
       setData(response.data);
+      setIsLoadingData(false);
     } catch (error) {
       console.error("Error fetching books:", error);
       setError(error.message);
@@ -23,5 +26,5 @@ export const useGetData = (whatsData) => {
     getData();
   }, []);
 
-  return { getData, data, error };
+  return { getData, data, error, isLoadingData };
 };
