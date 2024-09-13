@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import AuthorsList from "./pages/Authors/AuthorsList";
+import BookDetalis from "./pages/Books/BookDetais/BookDetalis";
 import BookList from "./pages/Books/BookList";
 import BooksByAuthor from "./pages/Books/BooksByAuthor/BooksByAuthor";
 import BooksByGenre from "./pages/Books/BooksByGenre/BooksByGenre";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/books",
         element: <BookList />,
+      },
+      {
+        path: "/book/:slug",
+        element: <BookDetalis />,
       },
       {
         path: "/authors/:slug",

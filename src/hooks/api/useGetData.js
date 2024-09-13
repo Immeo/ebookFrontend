@@ -10,7 +10,7 @@ export const useGetData = (whatsData) => {
   const getData = async () => {
     try {
       setIsLoadingData(true);
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       const response = await axios.get(`${PREFIX}${whatsData}/`, {
         withCredentials: false,
       });

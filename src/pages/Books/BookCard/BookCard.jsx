@@ -48,7 +48,7 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
                     <div className="items-end">
                       <Link
                         className="hover:hover-bg-action mt-3 rounded-lg bg-bg-action px-5 py-2 font-bold shadow-md [color:var(--main-color)] sm:mt-0 md:px-6 md:py-3 md:text-lg"
-                        to={`/book/${book.id}`}
+                        to={`/book/${book.book_slug}`}
                       >
                         О книге
                       </Link>
