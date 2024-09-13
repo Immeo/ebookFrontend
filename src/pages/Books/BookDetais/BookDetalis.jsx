@@ -1,14 +1,23 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import renderStarsIcon from "../../../assets/icons/renderStarsIcon;";
 import { sumRating } from "../../../helpering/HelpingFuncion/sumRating";
 import { useGetData } from "../../../hooks/api/useGetData";
 
 function BookDetalis() {
+  const [bookRead, setBookRead] = useState(null);
+  const [isFrameOpen, setIsFrameOpen] = useState(false);
   const { slug } = useParams();
   const { data, error, isLoadingData } = useGetData(`books/${slug}`);
 
   const onDowload = (link) => {
     window.open(link, "_blank");
+  };
+
+  const onRead = () => {
+    setIsFrameOpen(!isFrameOpen);
+    const filePath = data.link_to_file;
+    setBookRead(filePath);
   };
 
   return (
@@ -28,7 +37,10 @@ function BookDetalis() {
               </div>
               <div className="-mx-2 mb-4 flex">
                 <div className="w-1/2 px-2">
-                  <button className="w-full translate-y-1 rounded-lg bg-bg-action px-5 py-2.5 text-sm font-medium text-main-color hover:bg-hover-bg-action hover:text-hover-main-color focus:outline-none focus:ring">
+                  <button
+                    className="w-full translate-y-1 rounded-lg bg-bg-action px-5 py-2.5 text-sm font-medium text-main-color hover:bg-hover-bg-action hover:text-hover-main-color focus:outline-none focus:ring"
+                    onClick={onRead}
+                  >
                     Читать
                   </button>
                 </div>
@@ -107,6 +119,9 @@ function BookDetalis() {
           </div>
         </div>
       )}
+      <div className={`${isFrameOpen ? "block" : "hidden"} px-4 md:flex-1`}>
+        <iframe width="100%" height="700px" src={bookRead}></iframe>
+      </div>
     </div>
   );
 }
