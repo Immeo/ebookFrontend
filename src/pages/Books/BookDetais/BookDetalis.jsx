@@ -7,6 +7,10 @@ function BookDetalis() {
   const { slug } = useParams();
   const { data, error, isLoadingData } = useGetData(`books/${slug}`);
 
+  const onDowload = (link) => {
+    window.open(link, "_blank");
+  };
+
   return (
     <div className="mx-auto max-w-6xl py-8">
       {isLoadingData && <p>Loading...</p>}
@@ -29,7 +33,10 @@ function BookDetalis() {
                   </button>
                 </div>
                 <div className="w-1/2 px-2">
-                  <button className="w-full translate-y-1 rounded-lg bg-main-color px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-hover-main-color focus:outline-none focus:ring">
+                  <button
+                    className="w-full translate-y-1 rounded-lg bg-main-color px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-hover-main-color focus:outline-none focus:ring"
+                    onClick={() => onDowload(data.link_to_file)}
+                  >
                     Скачать
                   </button>
                 </div>
