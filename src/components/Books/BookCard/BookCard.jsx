@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FavoritesIcon from "../../../assets/icons/FavoritesIcon";
 
 function BookCard({ books, error, sumRating, renderStarsIcon }) {
   return (
@@ -19,21 +20,43 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
                 height="200px"
                 alt="Обложка книги"
               />
+              <button className="relative" type="button">
+                <span className="left-3s absolute bottom-56">
+                  <FavoritesIcon iconColor={"#000"} size={50} />
+                </span>
+              </button>
             </div>
             <div className="w-full p-5 pb-10">
-              <h2 className="mt-4 text-2xl font-semibold text-main-color">
+              <h2 className="mt-4 text-2xl font-semibold">
                 {book.title_books}
               </h2>
-              <p className="mt-2 text-sm text-main-color">
+              <Link
+                to={`/authors/${book.author_books.authors_slug}`}
+                className="mt-2 text-lg text-main-color hover:text-hover-main-color"
+              >
                 {book.author_books.authors_full_name}
-              </p>
-              <p className="mt-2 leading-relaxed text-main-color">
-                {book.description_books}
-              </p>
+              </Link>
+              <p className="mt-2 text-2xl">{book.description_books}</p>
               <div className="sm:flex sm:justify-between">
                 <div className="flex flex-1 flex-col text-sm">
-                  <div>Жанр: {book.genre_books.genres_name}</div>
-                  <div>Издатель: {book.publisher_books.publishers_name}</div>
+                  <span className="text-lg">
+                    Жанр:{" "}
+                    <Link
+                      to={`/genres/${book.genre_books.genres_slug}`}
+                      className="cursor-pointerd translate-x-1 text-main-color duration-75 hover:text-hover-main-color"
+                    >
+                      {book.genre_books.genres_name}
+                    </Link>
+                  </span>
+                  <span className="mt-2 text-lg">
+                    Издатель:{" "}
+                    <Link
+                      to={`/publishers/${book.publisher_books.publishers_slug}`}
+                      className="cursor-pointer text-main-color duration-75 hover:text-hover-main-color"
+                    >
+                      {book.publisher_books.publishers_name}
+                    </Link>
+                  </span>
                   <div className="mt-5 flex items-center justify-between gap-5">
                     {book.rate && book.rate.length > 0 ? (
                       <div>
