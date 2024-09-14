@@ -21,13 +21,13 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
               />
             </div>
             <div className="w-full p-5 pb-10">
-              <h2 className="mt-4 text-2xl font-semibold [color:var(--text-color)]">
+              <h2 className="mt-4 text-2xl font-semibold text-main-color">
                 {book.title_books}
               </h2>
-              <p className="mt-2 text-sm [color:var(--text-color)]">
+              <p className="mt-2 text-sm text-main-color">
                 {book.author_books.authors_full_name}
               </p>
-              <p className="mt-2 leading-relaxed [color:var(--text-color)]">
+              <p className="mt-2 leading-relaxed text-main-color">
                 {book.description_books}
               </p>
               <div className="sm:flex sm:justify-between">
@@ -47,7 +47,7 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
                     )}
                     <div className="items-end">
                       <Link
-                        className="hover:hover-bg-action mt-3 rounded-lg bg-bg-action px-5 py-2 font-bold shadow-md [color:var(--main-color)] sm:mt-0 md:px-6 md:py-3 md:text-lg"
+                        className="hover:hover-bg-action mt-3 rounded-lg bg-bg-action px-5 py-2 font-bold text-main-color shadow-md duration-100 hover:text-hover-main-color sm:mt-0 md:px-6 md:py-3 md:text-lg"
                         to={`/book/${book.book_slug}`}
                       >
                         О книге
@@ -63,4 +63,5 @@ function BookCard({ books, error, sumRating, renderStarsIcon }) {
     </>
   );
 }
+
 export default BookCard;

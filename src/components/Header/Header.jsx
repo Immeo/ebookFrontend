@@ -27,7 +27,7 @@ const Header = memo(function Header() {
           <ul className="flex items-center justify-center gap-20">
             <li>
               <NavLink
-                className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                className="translate-x-1 cursor-pointer text-2xl text-main-color duration-100 hover:text-hover-main-color"
                 to="/"
               >
                 Главная
@@ -35,7 +35,7 @@ const Header = memo(function Header() {
             </li>
             <li>
               <button
-                className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                className="translate-x-1 cursor-pointer text-2xl text-main-color duration-100 hover:text-hover-main-color"
                 type="button"
                 onClick={() => setIsOpenMenu(!isOpenMenu)}
               >
@@ -46,7 +46,7 @@ const Header = memo(function Header() {
               >
                 <li>
                   <NavLink
-                    className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                    className="hover:hover-main-text-color translate-x duration-100-1 cursor-pointer text-2xl text-main-color"
                     to="/authors"
                   >
                     По авторам
@@ -54,7 +54,7 @@ const Header = memo(function Header() {
                 </li>
                 <li>
                   <NavLink
-                    className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                    className="hover:hover-main-text-color translate-x duration-100-1 cursor-pointer text-2xl text-main-color"
                     to="/genres"
                   >
                     По жанрам
@@ -62,7 +62,7 @@ const Header = memo(function Header() {
                 </li>
                 <li>
                   <NavLink
-                    className="translate-x-1 cursor-pointer break-words text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                    className="hover:hover-main-color translate-text-x-1 c duration-100ursor-pointer break-words text-2xl text-main-color"
                     to="/publishers"
                   >
                     По издателю
@@ -70,7 +70,7 @@ const Header = memo(function Header() {
                 </li>
                 <li>
                   <NavLink
-                    className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                    className="hover:hover-main-text-color translate-x duration-100-1 cursor-pointer text-2xl text-main-color"
                     to="/books"
                   >
                     Все книги
@@ -80,7 +80,7 @@ const Header = memo(function Header() {
             </li>
             <li>
               <NavLink
-                className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
+                className="translate-x-1 cursor-pointer text-2xl text-main-color duration-100 hover:text-hover-main-color"
                 to="/favorites"
               >
                 Избранное

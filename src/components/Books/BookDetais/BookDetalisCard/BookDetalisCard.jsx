@@ -1,30 +1,15 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import renderStarsIcon from "../../../assets/icons/renderStarsIcon;";
-import { sumRating } from "../../../helpering/HelpingFuncion/sumRating";
-import { useGetData } from "../../../hooks/api/useGetData";
+import { Link } from "react-router-dom";
+import renderStarsIcon from "../../../../assets/icons/renderStarsIcon;";
+import { sumRating } from "../../../../helpering/HelpingFuncion/sumRating";
 
-function BookDetalis() {
-  const [bookRead, setBookRead] = useState(null);
-  const [isFrameOpen, setIsFrameOpen] = useState(false);
-  const { slug } = useParams();
-  const { data, error, isLoadingData } = useGetData(`books/${slug}`);
-
-  const onDowload = (link) => {
-    window.open(link, "_blank");
-  };
-
-  const onRead = () => {
-    setIsFrameOpen(!isFrameOpen);
-    const filePath = data.link_to_file;
-    setBookRead(filePath);
-  };
+function BookDetalisCard(props) {
+  const { onDowload, onRead, data, isLoadingData, error } = props;
 
   return (
-    <div className="mx-auto max-w-6xl py-8">
-      {isLoadingData && <p>Loading...</p>}
+    <>
+      {isLoadingData && <p className="text-center">Загрузка...</p>}
       {error && <p>Error: {error.message}</p>}
-      {!isLoadingData && data && (
+      {!isLoadingData && !error && (
         <div className="-mx-4 flex flex-col md:flex-row">
           <div className="gap-22 flex justify-around">
             <div className="px-4 md:flex-1">
@@ -119,10 +104,8 @@ function BookDetalis() {
           </div>
         </div>
       )}
-      <div className={`${isFrameOpen ? "block" : "hidden"} px-4 md:flex-1`}>
-        <iframe width="100%" height="700px" src={bookRead}></iframe>
-      </div>
-    </div>
+    </>
   );
 }
-export default BookDetalis;
+
+export default BookDetalisCard;

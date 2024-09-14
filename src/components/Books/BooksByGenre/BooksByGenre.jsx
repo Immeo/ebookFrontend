@@ -23,4 +23,5 @@ function BooksByGenre() {
     </div>
   );
 }
+
 export default BooksByGenre;

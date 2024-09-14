@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useGetData } from "../../hooks/api/useGetData";
+import PublishersCard from "./PublishersCard/PublishersCard";
 
 function PublishersList() {
   const { data, error, isLoadingData } = useGetData("publishers");
@@ -9,18 +9,9 @@ function PublishersList() {
       <h1 className="text-2xl font-bold">Издательства: </h1>
       {error && <div>{error} </div>}
       {isLoadingData && <div className="text-center text-2xl">Загрузка...</div>}
-      {data &&
-        data.map((item) => (
-          <div key={item.publishers_id}>
-            <Link
-              className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
-              to={`/publishers/${item.publishers_slug}`}
-            >
-              {item.publishers_name}
-            </Link>
-          </div>
-        ))}
+      <PublishersCard data={data} />
     </div>
   );
 }
+
 export default PublishersList;

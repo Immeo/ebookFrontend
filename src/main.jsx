@@ -1,16 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AuthorsList from "./components/Authors/AuthorsList";
+import BookDetalis from "./components/Books/BookDetais/BookDetalis";
+import BookList from "./components/Books/BookList";
+import BooksByAuthor from "./components/Books/BooksByAuthor/BooksByAuthor";
+import BooksByGenre from "./components/Books/BooksByGenre/BooksByGenre";
+import BooksPublishers from "./components/Books/BooksPublishers/BooksPublishers";
+import GenreList from "./components/Genre/GenreList";
+import PublishersList from "./components/Publishers/PublishersList";
 import "./index.css";
-import AuthorsList from "./pages/Authors/AuthorsList";
-import BookDetalis from "./pages/Books/BookDetais/BookDetalis";
-import BookList from "./pages/Books/BookList";
-import BooksByAuthor from "./pages/Books/BooksByAuthor/BooksByAuthor";
-import BooksByGenre from "./pages/Books/BooksByGenre/BooksByGenre";
-import BooksPublishers from "./pages/Books/BooksPublishers/BooksPublishers";
-import GenreList from "./pages/Genre/GenreList";
 import Layout from "./pages/Layout/Layout";
-import PublishersList from "./pages/Publishers/PublishersList";
 
 const router = createBrowserRouter([
   {

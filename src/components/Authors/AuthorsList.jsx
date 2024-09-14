@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useGetData } from "../../hooks/api/useGetData";
+import AuthorCard from "./AuthorCard/AuthorCard";
 
 function AuthorsList() {
   const { data, error, isLoadingData } = useGetData("authors");
@@ -9,18 +9,9 @@ function AuthorsList() {
       <h1 className="text-2xl font-bold">Авторы: </h1>
       {error && <div>{error} </div>}
       {isLoadingData && <div className="text-center text-2xl">Загрузка...</div>}
-      {data &&
-        data.map((item) => (
-          <div key={item.authors_id}>
-            <Link
-              className="translate-x-1 cursor-pointer text-2xl duration-75 [color:var(--main-color)] hover:[color:var(--hover-main-color)]"
-              to={`/authors/${item.authors_slug}`}
-            >
-              {item.authors_full_name}
-            </Link>
-          </div>
-        ))}
+      <AuthorCard data={data} />
     </div>
   );
 }
+
 export default AuthorsList;
